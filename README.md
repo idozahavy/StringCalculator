@@ -1,2 +1,2 @@
 # StringCalculator
- Calculator thats converts string math expression to solveable numbers
+ Calculator that solves string math expression
