@@ -1,6 +1,6 @@
-from Calculator.MathTerm import MathTermClass
-from Calculator import MathSegmentClass
-from Calculator import math_operator_order, math_operator_types
+from StringCalculator.MathTerm import MathTermClass
+from StringCalculator.MathSegmentClass import MathSegmentClass
+from StringCalculator.MathOperators import math_operator_order, math_operator_types
 
 
 class MathExpressionClass(MathSegmentClass):

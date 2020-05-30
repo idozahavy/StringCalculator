@@ -1,5 +1,5 @@
-from Calculator import MathSegmentClass
-from Calculator import math_operator_types, math_operation_dictionary
+from StringCalculator.MathSegmentClass import MathSegmentClass
+from StringCalculator.MathOperators import math_operator_types, math_operation_dictionary
 
 
 class MathTermClass(MathSegmentClass):

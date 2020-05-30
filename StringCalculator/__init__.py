@@ -1,4 +1,4 @@
-from Calculator.Calculator import MathExpressionClass
+from StringCalculator.Calculator import MathExpressionClass
 
 
 def SolveMathProblem(text: str):
