@@ -23,21 +23,27 @@ class MathTermClass(MathSegmentClass):
             result = math_operation_dictionary[self.operator](self.number, right_term.number)
             return MathTermClass(result, right_term.operator)
         else:
-            raise Exception("operator '{}' is not customizes to use calculate".format(self.operator))
+            raise Exception("operator '{}' is not customized to use calculate".format(self.operator))
 
     @classmethod
     def CreateTermFromText(cls, text) -> 'MathTermClass':
         index = 0
+        is_num = False
+        start_with_sign = False
         if text[index] == '-' or text[index] == '+':
+            start_with_sign = True
             index += 1
         period_used = False
         while index < len(text) and (text[index].isdigit() or (not period_used and text[index] == '.')):
             if text[index] == '.' and not period_used:
                 period_used = True
+            else:
+                is_num = True
             index += 1
 
-        if index == 0:
-            raise Exception("could not find number in text '{}'".format(text))
+        if not is_num:
+            return cls(0, None)
+            # raise Exception("could not find number in text '{}'".format(text))
 
         if index < len(text) and text[index] in math_operator_types:
             return cls(text[:index], text[index])
