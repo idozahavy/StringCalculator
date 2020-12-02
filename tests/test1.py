@@ -1,6 +1,8 @@
 from StringCalculator import SolveMathProblem
+from StringCalculator.Calculator import MathExpressionClass
 
-exp_texts = ["5",
+
+exp_texts = ["10^308+10^308",
              "1+(1)",
              "2*6",
              "-9+3",
@@ -16,4 +18,13 @@ for text in exp_texts:
     print()
     print("exp_text{} ---------".format(i))
     print("expression = '{}'".format(exp_texts[i-1]))
+    print("expression Class = '{}'".format(MathExpressionClass(exp_texts[i-1])))
     print("result = {}".format(SolveMathProblem(exp_texts[i-1])))
+
+input_text = None
+while input_text != "stop":
+    print()
+    print("expression Class = '{}'".format(MathExpressionClass(input_text)))
+    print("result = {}".format(SolveMathProblem(input_text)))
+    print()
+    input_text = input("enter expression_")
