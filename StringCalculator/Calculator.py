@@ -6,6 +6,7 @@ from StringCalculator.MathOperators import math_operator_order, math_operator_ty
 class MathExpressionClass(MathSegmentClass):
     def __init__(self, text: str):
         super().__init__(None)
+        text = text.replace(' ','')
         self.segments = []
         i = 0
         if type(text) is not str:
@@ -18,7 +19,7 @@ class MathExpressionClass(MathSegmentClass):
                 new_expression = MathExpressionClass(text[i + 1:])
                 par_count = 1 + new_expression._countNestedExpressions()
                 for _ in range(par_count):
-                    i = text.find(')', i + 1) + 1
+                    i = text.find(')', i )+1
                 if i == 0:
                     return
                     # raise Exception("no closing parentheses in text '{}'".format(text))
